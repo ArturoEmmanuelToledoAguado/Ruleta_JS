@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juego de Ruleta en JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
       function azar() {
         rand = Math.floor(Math.random() * 33);
         document.getElementById("random").innerHTML = rand;
+
+        var dato= $("#apuesta").val();
+        alert("Has apostado: "+dato);
+        document.getElementById("apostado").innerHTML =dato;
+
         if (rand % 2 == 0) {
           document.getElementById("premio").innerHTML = "Rojo, Ha salido par";
         } else {
@@ -25,6 +31,7 @@
     <center>
       <div style="background-color: red"><h2>La ruleta</h2></div>
       <div style="background-color: green">
+        <a>Has apostado por el: </a>
         <p id="apostado"></p>
         <br />
         <p id="random"></p>

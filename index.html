@@ -15,6 +15,12 @@
         alert("Has apostado: "+dato);
         document.getElementById("apostado").innerHTML =dato;
 
+        if(dato==rand){
+            document.getElementById("acertado").innerHTML ="Has acertado";
+        }else{
+            document.getElementById("acertado").innerHTML="No has acertado";
+        }
+
         if (rand % 2 == 0) {
           document.getElementById("premio").innerHTML = "Rojo, Ha salido par";
         } else {
@@ -38,7 +44,7 @@
         <br />
         <font color="white"><h2 id="premio"></h2></font>
         <br />
-        <p id="acertado"></p>
+        <h2 id="acertado"></h2>
         <br />
         <input type="number" id="apuesta" size="2" />
         <br />

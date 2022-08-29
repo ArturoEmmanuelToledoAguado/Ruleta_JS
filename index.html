@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juego de Ruleta en JS</title>
     <script>
-        function azar(){
-            rand=Math.floor(Math.random()*33);
-            document.getElementById("random").innerHTML = rand;
+      function azar() {
+        rand = Math.floor(Math.random() * 33);
+        document.getElementById("random").innerHTML = rand;
+        if (rand % 2 == 0) {
+          document.getElementById("premio").innerHTML = "Rojo, Ha salido par";
+        } else {
+          document.getElementById("premio").innerHTML =
+            "Negro, Ha salido impar";
         }
+        if (rand == 0) {
+          document.getElementById("premio").innerHTML = "Ha tocado el 0";
+        }
+      }
     </script>
-</head>
-<body>
-    <div><h2>La ruleta</h2></div>
-    <div>
+  </head>
+  <body>
+    <center>
+      <div style="background-color: red"><h2>La ruleta</h2></div>
+      <div style="background-color: green">
         <p id="apostado"></p>
-        <br>
+        <br />
         <p id="random"></p>
-        <br>
-        <p id="premio"></p>
-        <br>
+        <br />
+        <font color="white"><h2 id="premio"></h2></font>
+        <br />
         <p id="acertado"></p>
-        <br>
-        <input type="number" id="apuesta" size="2">
-        <br>
-        <input type="submit" id="btn" onclick="return azar()" value="Apostado">
-    </div>
-</body>
+        <br />
+        <input type="number" id="apuesta" size="2" />
+        <br />
+        <input type="submit" id="btn" onclick="return azar()" value="Apostar" />
+      </div>
+    </center>
+  </body>
 </html>

@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Ruleta en JS</title>
+    <script>
+        function azar(){
+            rand=Math.floor(Math.random()*33);
+            document.getElementById("random").innerHTML = rand;
+        }
+    </script>
 </head>
 <body>
     <div><h2>La ruleta</h2></div>
@@ -17,9 +23,9 @@
         <br>
         <p id="acertado"></p>
         <br>
-        <input type="number" id="apuesta" size="2" value="Apostado">
+        <input type="number" id="apuesta" size="2">
         <br>
-        <input type="submit" id="btn">
+        <input type="submit" id="btn" onclick="return azar()" value="Apostado">
     </div>
 </body>
 </html>

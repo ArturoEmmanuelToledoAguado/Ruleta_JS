@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juego de Ruleta en JS</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
       function azar() {
@@ -17,6 +18,7 @@
 
         if(dato==rand){
             document.getElementById("acertado").innerHTML ="Has acertado";
+            alert("Te ha tocado");
         }else{
             document.getElementById("acertado").innerHTML="No has acertado";
         }
@@ -35,8 +37,8 @@
   </head>
   <body>
     <center>
-      <div style="background-color: red"><h2>La ruleta</h2></div>
-      <div style="background-color: green">
+      <div id="j"><h2>La ruleta</h2></div>
+      <div id="redondo">
         <a>Has apostado por el: </a>
         <p id="apostado"></p>
         <br />
